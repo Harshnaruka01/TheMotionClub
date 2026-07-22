@@ -1,5 +1,4 @@
-export const HERO_VIDEO =
-  'https://cdn.coverr.co/videos/coverr-group-of-friends-running-together-5636/1080p.mp4';
+export const HERO_VIDEO = '/hero-video.mp4';
 
 export const MARQUEE_IMAGES = [
   'https://images.unsplash.com/photo-1476480862128-209bfaa8edc8?w=840&h=540&fit=crop',

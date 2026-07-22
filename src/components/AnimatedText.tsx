@@ -38,11 +38,16 @@ function Char({
   range: [number, number];
 }) {
   const opacity = useTransform(progress, range, [0.2, 1]);
+  const displayChar = char === ' ' ? '\u00A0' : char;
+
   return (
-    <span className="relative inline">
-      <span className="invisible">{char === ' ' ? '\u00A0' : char}</span>
-      <motion.span className="absolute left-0 top-0" style={{ opacity }}>
-        {char === ' ' ? '\u00A0' : char}
+    <span className="relative inline-block">
+      <span className="invisible block">{displayChar}</span>
+      <motion.span
+        className="absolute left-0 top-0 block"
+        style={{ opacity }}
+      >
+        {displayChar}
       </motion.span>
     </span>
   );
