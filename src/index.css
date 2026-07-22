@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  background-color: #0c0c0c;
+  font-family: 'Kanit', sans-serif;
+  color: #f8f8f8;
+  overflow-x: clip;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #ff6b00 0%, #ffb347 50%, #f8f8f8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8533 50%, #ffaa00 100%);
+  box-shadow:
+    0 4px 20px rgba(255, 107, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.ghost-btn {
+  border: 2px solid rgba(248, 248, 248, 0.6);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ghost-btn:hover {
+  background: rgba(248, 248, 248, 0.1);
+  border-color: #f8f8f8;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b00;
+  border-radius: 3px;
+}
