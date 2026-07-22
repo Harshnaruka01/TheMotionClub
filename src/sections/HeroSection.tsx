@@ -95,7 +95,9 @@ export default function HeroSection() {
 
         <FadeIn delay={0.85} y={20} className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <GradientButton label="Join Our Club" />
-          <GhostButton label="Explore Activities" />
+          <a href="#activities">
+            <GhostButton label="Explore Activities" />
+          </a>
         </FadeIn>
       </div>
 

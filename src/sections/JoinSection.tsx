@@ -38,7 +38,9 @@ export default function JoinSection() {
 
         <FadeIn delay={0.3} y={20} className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <GradientButton label="Become a Member" />
-          <GhostButton label="Contact Us" />
+          <a href="#contact">
+            <GhostButton label="Contact Us" />
+          </a>
         </FadeIn>
       </div>
     </section>

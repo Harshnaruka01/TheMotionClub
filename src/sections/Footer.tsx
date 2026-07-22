@@ -1,12 +1,12 @@
-import { Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { Share2, Globe, Mail, Phone } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import { NAV_LINKS } from '../data/content';
 
 const SOCIAL = [
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Facebook, label: 'Facebook', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: MessageCircle, label: 'WhatsApp', href: '#' },
+  { icon: Share2, label: 'Instagram', href: '#' },
+  { icon: Globe, label: 'Facebook', href: '#' },
+  { icon: Mail, label: 'LinkedIn', href: '#' },
+  { icon: Phone, label: 'WhatsApp', href: '#' },
 ];
 
 export default function Footer() {
