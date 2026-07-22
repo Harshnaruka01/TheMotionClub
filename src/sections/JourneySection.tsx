@@ -21,25 +21,28 @@ function TimelineItem({
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ opacity, scale }}
-      className="sticky top-24 flex min-h-[40vh] flex-col items-center justify-center md:top-32"
-    >
-      <p className="hero-heading text-5xl font-black md:text-7xl">{milestone.year}</p>
-      <h3 className="mt-4 text-center text-xl font-medium uppercase tracking-wide text-light sm:text-2xl md:text-3xl">
-        {milestone.title}
-      </h3>
-      {index < total - 1 && (
-        <motion.span
-          className="mt-8 text-3xl text-accent"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+    <div ref={ref} className="min-h-[40vh]">
+      <div className="sticky top-24 flex h-full items-center justify-center md:top-32">
+        <motion.div
+          style={{ opacity, scale }}
+          className="flex w-full flex-col items-center justify-center"
         >
-          ↓
-        </motion.span>
-      )}
-    </motion.div>
+          <p className="hero-heading text-5xl font-black md:text-7xl">{milestone.year}</p>
+          <h3 className="mt-4 text-center text-xl font-medium uppercase tracking-wide text-light sm:text-2xl md:text-3xl">
+            {milestone.title}
+          </h3>
+          {index < total - 1 && (
+            <motion.span
+              className="mt-8 text-3xl text-accent"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              ↓
+            </motion.span>
+          )}
+        </motion.div>
+      </div>
+    </div>
   );
 }
 
