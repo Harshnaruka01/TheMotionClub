@@ -6,7 +6,7 @@ import MobileMenu from '../components/MobileMenu';
 import { GradientButton, GhostButton } from '../components/Buttons';
 import { HERO_VIDEO } from '../data/content';
 
-const HEADLINE_WORDS = ['MOVE', 'TOGETHER.', 'LIVE', 'BETTER.'];
+const HEADLINE_WORDS = ['FITNESS.', 'FRIENDSHIP.', 'ADVENTURE.'];
 
 function Particles() {
   return (
@@ -71,7 +71,7 @@ export default function HeroSection() {
             <span key={word} className="block overflow-hidden">
               <motion.span
                 className="hero-heading block font-black uppercase leading-[0.95] tracking-tight"
-                style={{ fontSize: 'clamp(2.5rem, 10vw, 130px)' }}
+                style={{ fontSize: 'clamp(1.8rem, 6vw, 70px)' }}
                 initial={{ y: '110%' }}
                 animate={{ y: 0 }}
                 transition={{
