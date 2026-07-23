@@ -30,15 +30,15 @@ export default function ActivitiesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
                 <span className="absolute left-6 top-6 text-4xl">{activity.icon}</span>
               </div>
-              <div className="glass-card bg-dark/90 p-6 sm:p-8">
-                <h3 className="mb-4 text-xl font-medium uppercase text-light sm:text-2xl">
+              <div className="glass-card bg-white/90 p-6 sm:p-8">
+                <h3 className="mb-4 text-xl font-medium uppercase text-dark sm:text-2xl">
                   {activity.title}
                 </h3>
                 <ul className="space-y-2">
                   {activity.items.map((item) => (
                     <li
                       key={item}
-                      className="text-sm font-light text-muted sm:text-base"
+                      className="text-sm font-light text-dark/70 sm:text-base"
                     >
                       — {item}
                     </li>
