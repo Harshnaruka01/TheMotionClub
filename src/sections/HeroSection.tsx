@@ -70,8 +70,8 @@ export default function HeroSection() {
           {HEADLINE_WORDS.map((word, i) => (
             <span key={word} className="block overflow-hidden">
               <motion.span
-                className="hero-heading block font-black uppercase leading-[0.9] tracking-tight"
-                style={{ fontSize: 'clamp(3rem, 14vw, 180px)' }}
+                className="hero-heading block font-black uppercase leading-[0.95] tracking-tight"
+                style={{ fontSize: 'clamp(2.5rem, 10vw, 130px)' }}
                 initial={{ y: '110%' }}
                 animate={{ y: 0 }}
                 transition={{
