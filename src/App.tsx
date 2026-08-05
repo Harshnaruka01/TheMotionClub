@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
@@ -14,6 +15,24 @@ import GallerySection from './sections/GallerySection';
 import JourneySection from './sections/JourneySection';
 import JoinSection from './sections/JoinSection';
 import Footer from './sections/Footer';
+import ContactSection from './sections/ContactSection';
+
+function Home() {
+  return (
+    <main style={{ overflowX: 'clip' }}>
+      <HeroSection />
+      <MarqueeSection />
+      <AboutSection />
+      <VisionMissionSection />
+      <ActivitiesSection />
+      <WhySection />
+      <GallerySection />
+      <JourneySection />
+      <JoinSection />
+      <Footer />
+    </main>
+  );
+}
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -22,23 +41,17 @@ export default function App() {
     <>
       <PageLoader onComplete={() => setLoaded(true)} />
       {loaded && (
-        <SmoothScroll>
-          <ScrollProgress />
-          <MouseGlow />
-          <BackToTop />
-          <main style={{ overflowX: 'clip' }}>
-            <HeroSection />
-            <MarqueeSection />
-            <AboutSection />
-            <VisionMissionSection />
-            <ActivitiesSection />
-            <WhySection />
-            <GallerySection />
-            <JourneySection />
-            <JoinSection />
-            <Footer />
-          </main>
-        </SmoothScroll>
+        <Router>
+          <SmoothScroll>
+            <ScrollProgress />
+            <MouseGlow />
+            <BackToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<ContactSection />} />
+            </Routes>
+          </SmoothScroll>
+        </Router>
       )}
     </>
   );

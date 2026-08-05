@@ -3,6 +3,7 @@ import AnimatedText from '../components/AnimatedText';
 import { AnimatedCounter } from '../components/MobileMenu';
 import { GradientButton } from '../components/Buttons';
 import { STATS } from '../data/content';
+import { useNavigate } from 'react-router-dom';
 
 const DECORATIONS = [
   {
@@ -36,6 +37,7 @@ const DECORATIONS = [
 ];
 
 export default function AboutSection() {
+  const navigate = useNavigate();
   const text =
     "The Motion Club is more than a fitness club. We are a community built on movement, wellness, friendship, and adventure. Every run, every yoga session, every trek, and every challenge helps people become healthier, happier, and more connected. Whether you're taking your first step or training for your next marathon, you'll always find support, motivation, and a place to belong.";
 
@@ -81,7 +83,7 @@ export default function AboutSection() {
         </div>
 
         <FadeIn delay={0.5} className="mt-8 sm:mt-12">
-          <GradientButton label="Contact Us" />
+          <GradientButton label="Contact Us" onClick={() => navigate('/contact')} />
         </FadeIn>
       </div>
     </section>

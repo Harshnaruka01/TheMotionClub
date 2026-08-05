@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '../data/content';
@@ -9,6 +10,7 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ transparent = true }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -21,15 +23,27 @@ export default function MobileMenu({ transparent = true }: MobileMenuProps) {
     <>
       <nav className="hidden items-center justify-between gap-6 lg:flex">
         {NAV_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={`text-sm font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70 md:text-base lg:text-lg ${
-              transparent ? 'text-light' : 'text-light'
-            }`}
-          >
-            {link.label}
-          </a>
+          link.label === 'Contact' ? (
+            <button
+              key={link.href}
+              onClick={() => navigate('/contact')}
+              className={`text-sm font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70 md:text-base lg:text-lg ${
+                transparent ? 'text-light' : 'text-light'
+              }`}
+            >
+              {link.label}
+            </button>
+          ) : (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`text-sm font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70 md:text-base lg:text-lg ${
+                transparent ? 'text-light' : 'text-light'
+              }`}
+            >
+              {link.label}
+            </a>
+          )
         ))}
       </nav>
 
@@ -51,17 +65,33 @@ export default function MobileMenu({ transparent = true }: MobileMenuProps) {
             className="fixed inset-0 z-[55] flex flex-col items-center justify-center gap-8 bg-dark/95 backdrop-blur-xl lg:hidden"
           >
             {NAV_LINKS.map((link, i) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                onClick={() => setOpen(false)}
-                className="text-2xl font-medium uppercase tracking-wider text-light"
-              >
-                {link.label}
-              </motion.a>
+              link.label === 'Contact' ? (
+                <motion.button
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  onClick={() => {
+                    navigate('/contact');
+                    setOpen(false);
+                  }}
+                  className="text-2xl font-medium uppercase tracking-wider text-light"
+                >
+                  {link.label}
+                </motion.button>
+              ) : (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  onClick={() => setOpen(false)}
+                  className="text-2xl font-medium uppercase tracking-wider text-light"
+                >
+                  {link.label}
+                </motion.a>
+              )
             ))}
           </motion.div>
         )}

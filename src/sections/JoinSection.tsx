@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import FadeIn from '../components/FadeIn';
 import { GradientButton, GhostButton } from '../components/Buttons';
+import { useNavigate } from 'react-router-dom';
 
 export default function JoinSection() {
+  const navigate = useNavigate();
   return (
     <section
       id="join"
@@ -38,9 +40,7 @@ export default function JoinSection() {
 
         <FadeIn delay={0.3} y={20} className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <GradientButton label="Become a Member" />
-          <a href="#contact">
-            <GhostButton label="Contact Us" />
-          </a>
+          <GhostButton label="Contact Us" onClick={() => navigate('/contact')} />
         </FadeIn>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { Share2, Globe, Mail, Phone } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import { NAV_LINKS } from '../data/content';
+import { useNavigate } from 'react-router-dom';
 
 const SOCIAL = [
   { icon: Share2, label: 'Instagram', href: '#' },
@@ -10,6 +11,8 @@ const SOCIAL = [
 ];
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer
       id="contact"
@@ -46,13 +49,23 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-8 border-t border-white/10 pt-8 md:flex-row">
           <nav className="flex flex-wrap gap-6">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm uppercase tracking-wider text-muted transition-colors hover:text-accent"
-              >
-                {link.label}
-              </a>
+              link.label === 'Contact' ? (
+                <button
+                  key={link.href}
+                  onClick={() => navigate('/contact')}
+                  className="text-sm uppercase tracking-wider text-muted transition-colors hover:text-accent"
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm uppercase tracking-wider text-muted transition-colors hover:text-accent"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </nav>
           <p className="text-sm text-muted">

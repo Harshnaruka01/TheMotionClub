@@ -6,7 +6,7 @@ import MobileMenu from '../components/MobileMenu';
 import { GradientButton, GhostButton } from '../components/Buttons';
 import { HERO_VIDEO } from '../data/content';
 
-const HEADLINE_WORDS = ['FITNESS.', 'FRIENDSHIP.', 'ADVENTURE.'];
+const HEADLINE_WORDS = ['FITNESS .', 'FRIENDSHIP .', 'ADVENTURE .'];
 
 function Particles() {
   return (
