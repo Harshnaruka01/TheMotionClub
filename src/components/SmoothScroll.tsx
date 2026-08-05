@@ -13,6 +13,16 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       smoothWheel: true,
     });
 
+    // Prevent Lenis from interfering with form inputs
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
+        e.stopPropagation();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown, true);
+
     lenis.on('scroll', ScrollTrigger.update);
 
     const raf = (time: number) => {
@@ -36,6 +46,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     ScrollTrigger.refresh();
 
     return () => {
+      document.removeEventListener('keydown', handleKeyDown, true);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };

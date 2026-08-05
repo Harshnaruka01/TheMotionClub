@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
-import { GradientButton } from '../components/Buttons';
 import { Mail, Phone, MapPin, Send, ArrowLeft } from 'lucide-react';
 
-export default function ContactSection() {
-  const navigate = useNavigate();
+function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,8 +19,93 @@ export default function ContactSection() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  return (
+    <form onSubmit={handleSubmit} autoComplete="off" className="glass-card rounded-2xl p-8 space-y-6">
+      <div>
+        <label htmlFor="name" className="mb-2 block text-sm font-medium text-light">
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          autoComplete="off"
+          className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+          placeholder="Your name"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="email" className="mb-2 block text-sm font-medium text-light">
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          autoComplete="off"
+          className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+          placeholder="your@email.com"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-light">
+          Subject
+        </label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          autoComplete="off"
+          className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+          placeholder="How can we help?"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-light">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          rows={5}
+          autoComplete="off"
+          className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"
+          placeholder="Tell us more..."
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="gradient-btn w-full rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest text-white outline outline-2 outline-offset-[-3px] outline-white/80 transition-opacity hover:opacity-90 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base"
+      >
+        Send Message
+        <Send className="ml-2 h-4 w-4" />
+      </button>
+    </form>
+  );
+}
+
+export default function ContactSection() {
+  const navigate = useNavigate();
 
   return (
     <section
@@ -106,73 +189,7 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <FadeIn delay={0.2} x={40}>
-            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-6">
-              <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-light">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-light">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="mb-2 block text-sm font-medium text-light">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
-                  placeholder="How can we help?"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-light">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full rounded-lg bg-dark/50 border border-white/10 px-4 py-3 text-light placeholder:text-muted/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"
-                  placeholder="Tell us more..."
-                />
-              </div>
-
-              <GradientButton label="Send Message" className="w-full" icon={<Send className="ml-2 h-4 w-4" />} />
-            </form>
+            <ContactForm />
           </FadeIn>
         </div>
       </div>

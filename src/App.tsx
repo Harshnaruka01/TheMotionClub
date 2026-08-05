@@ -42,15 +42,17 @@ export default function App() {
       <PageLoader onComplete={() => setLoaded(true)} />
       {loaded && (
         <Router>
-          <SmoothScroll>
-            <ScrollProgress />
-            <MouseGlow />
-            <BackToTop />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<ContactSection />} />
-            </Routes>
-          </SmoothScroll>
+          <Routes>
+            <Route path="/" element={
+              <SmoothScroll>
+                <ScrollProgress />
+                <MouseGlow />
+                <BackToTop />
+                <Home />
+              </SmoothScroll>
+            } />
+            <Route path="/contact" element={<ContactSection />} />
+          </Routes>
         </Router>
       )}
     </>
