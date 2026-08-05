@@ -1,10 +1,13 @@
 import { ReactNode } from 'react';
 import { Magnet } from './FadeIn';
 
-interface GradientButtonProps {
+interface BaseButtonProps {
   label: string;
   className?: string;
   onClick?: () => void;
+}
+
+interface GradientButtonProps extends BaseButtonProps {
   icon?: ReactNode;
 }
 
@@ -23,7 +26,7 @@ export function GradientButton({ label, className = '', onClick, icon }: Gradien
   );
 }
 
-export function GhostButton({ label, className = '', onClick }: GradientButtonProps) {
+export function GhostButton({ label, className = '', onClick }: BaseButtonProps) {
   return (
     <button
       type="button"
