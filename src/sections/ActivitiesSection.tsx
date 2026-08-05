@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import FadeIn from '../components/FadeIn';
 import { ACTIVITIES } from '../data/content';
 
 export default function ActivitiesSection() {
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedActivities = showAll ? ACTIVITIES : ACTIVITIES.slice(0, 3);
+
   return (
     <section
       id="activities"
@@ -17,7 +22,7 @@ export default function ActivitiesSection() {
       </FadeIn>
 
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {ACTIVITIES.map((activity, i) => (
+        {displayedActivities.map((activity, i) => (
           <FadeIn key={activity.title} delay={i * 0.1}>
             <article className="group relative overflow-hidden rounded-[40px] border-2 border-transparent transition-all duration-500 hover:-translate-y-2 hover:border-accent hover:shadow-[0_0_30px_rgba(255,107,0,0.25)] sm:rounded-[50px] md:rounded-[60px]">
               <div className="relative h-56 overflow-hidden sm:h-64">
@@ -49,6 +54,19 @@ export default function ActivitiesSection() {
           </FadeIn>
         ))}
       </div>
+
+      {!showAll && (
+        <div className="mt-12 text-center md:hidden">
+          <FadeIn delay={0.3}>
+            <button
+              onClick={() => setShowAll(true)}
+              className="rounded-full border-2 border-dark px-8 py-3 text-sm font-medium uppercase tracking-widest text-dark transition-colors hover:bg-dark hover:text-white"
+            >
+              See More
+            </button>
+          </FadeIn>
+        </div>
+      )}
     </section>
   );
 }
