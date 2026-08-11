@@ -1,7 +1,7 @@
 export const HERO_VIDEO = '/hero-video.mp4';
 
 export const MARQUEE_IMAGES = [
-  'https://images.unsplash.com/photo-1476480862128-209bfaa8edc8?w=840&h=540&fit=crop',
+  '/photos/running.jpg',
   'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=840&h=540&fit=crop',
   'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=840&h=540&fit=crop',
   'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=840&h=540&fit=crop',
@@ -13,8 +13,8 @@ export const MARQUEE_IMAGES = [
   'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=840&h=540&fit=crop',
   'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=840&h=540&fit=crop',
   'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=840&h=540&fit=crop',
-  'https://images.unsplash.com/photo-1464822759844-d150baec0131?w=840&h=540&fit=crop',
-  'https://images.unsplash.com/photo-1526401485004-2aa4bef4891d?w=840&h=540&fit=crop',
+  '/photos/treking.jpg',
+  '/photos/jumba.jpg',
   'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=840&h=540&fit=crop',
   'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=840&h=540&fit=crop',
   'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=840&h=540&fit=crop',
@@ -25,18 +25,19 @@ export const MARQUEE_IMAGES = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: 'https://images.unsplash.com/photo-1571008887538-b36bb745ef8e?w=600&h=800&fit=crop', category: 'Running', tall: true },
+  { src: '/photos/running.jpg', category: 'Running', tall: true },
   { src: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&h=500&fit=crop', category: 'Yoga', tall: false },
-  { src: 'https://images.unsplash.com/photo-1551632811-561732d1e58d?w=600&h=700&fit=crop', category: 'Trekking', tall: true },
+  { src: '/photos/treking.jpg', category: 'Trekking', tall: true },
   { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop', category: 'Cycling', tall: false },
   { src: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&h=750&fit=crop', category: 'Camping', tall: true },
   { src: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&h=500&fit=crop', category: 'Community', tall: false },
   { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=650&fit=crop', category: 'Nature', tall: true },
   { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=480&fit=crop', category: 'Group', tall: false },
   { src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=720&fit=crop', category: 'Fitness', tall: true },
-  { src: 'https://images.unsplash.com/photo-1476480862128-209bfaa8edc8?w=600&h=520&fit=crop', category: 'Marathon', tall: false },
+  { src: '/photos/Marathon.jpg', category: 'Marathon', tall: false },
   { src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=680&fit=crop', category: 'Wellness', tall: true },
-  { src: 'https://images.unsplash.com/photo-1464822759844-d150baec0131?w=600&h=460&fit=crop', category: 'Mountains', tall: false },
+  { src: '/photos/mountains.jpg', category: 'Mountains', tall: false },
+  
 ];
 
 export const ACTIVITIES = [
