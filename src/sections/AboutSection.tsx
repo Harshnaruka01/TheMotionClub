@@ -6,29 +6,16 @@ import { STATS } from '../data/content';
 import { useNavigate } from 'react-router-dom';
 
 const DECORATIONS = [
+  
   {
-    src: '/photos/running.jpg',
-    className:
-      'hidden sm:block absolute top-[18%] left-[1%] w-[100px] sm:left-[2%] sm:w-[140px] md:left-[4%] md:w-[180px] rounded-3xl object-cover',
-    delay: 0.1,
-    x: -80,
-  },
-  {
-    src: '/photos/treking.jpg',
+    src: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop',
     className:
       'hidden sm:block absolute bottom-[4%] left-[3%] w-[90px] sm:left-[6%] sm:w-[120px] md:left-[10%] md:w-[160px] rounded-3xl object-cover',
     delay: 0.25,
     x: -80,
   },
   {
-    src: '/photos/Mountains.jpg',
-    className:
-      'hidden sm:block absolute top-[18%] right-[1%] w-[100px] sm:right-[2%] sm:w-[140px] md:right-[4%] md:w-[180px] rounded-3xl object-cover',
-    delay: 0.15,
-    x: 80,
-  },
-  {
-    src: '/photos/Marathon.jpg',
+    src: '/photos/treking.jpg',
     className:
       'hidden sm:block absolute bottom-[4%] right-[3%] w-[110px] sm:right-[6%] sm:w-[150px] md:right-[10%] md:w-[200px] rounded-3xl object-cover',
     delay: 0.3,
