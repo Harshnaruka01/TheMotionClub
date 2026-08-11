@@ -44,7 +44,7 @@ export const ACTIVITIES = [
     icon: '🏃',
     title: 'Running Club',
     items: ['Morning & Evening Runs', 'Marathon Preparation', 'Group Challenges'],
-    image: 'https://images.unsplash.com/photo-1571008887538-b36bb745ef8e?w=800&h=600&fit=crop',
+    image: '/photos/running.jpg',
   },
   {
     icon: '🧘',

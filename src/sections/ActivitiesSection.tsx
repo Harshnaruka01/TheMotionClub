@@ -15,7 +15,7 @@ export default function ActivitiesSection() {
       <FadeIn className="mb-16 text-center sm:mb-20 md:mb-28">
         <h2
           className="font-black uppercase leading-none tracking-tight text-dark"
-          style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+          style={{ fontSize: 'clamp(2.5rem, 8vw, 100px)' }}
         >
           Our Activities
         </h2>
