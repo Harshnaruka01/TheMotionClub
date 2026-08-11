@@ -36,7 +36,7 @@ export const GALLERY_IMAGES = [
   { src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=720&fit=crop', category: 'Fitness', tall: true },
   { src: '/photos/Marathon.jpg', category: 'Marathon', tall: false },
   { src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=680&fit=crop', category: 'Wellness', tall: true },
-  { src: '/photos/mountains.jpg', category: 'Mountains', tall: false },
+  { src: '/photos/Mountains.jpg', category: 'Mountains', tall: false },
   
 ];
 
