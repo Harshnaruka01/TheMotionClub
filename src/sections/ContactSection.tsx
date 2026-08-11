@@ -152,8 +152,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="mb-1 text-lg font-semibold text-light">Phone</h3>
-                  <p className="text-muted">+91 89493 83519
-</p>
+                  <p className="text-muted">+91 89554 87982</p>
                 </div>
               </div>
 
@@ -170,10 +169,7 @@ export default function ContactSection() {
               <div className="glass-card rounded-2xl p-6">
                 <h3 className="mb-4 text-lg font-semibold text-light">Club Hours</h3>
                 <div className="space-y-2 text-sm text-muted">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>6:00 AM - 10:00 PM</span>
-                  </div>
+                  
                   <div className="flex justify-between">
                     <span>Saturday</span>
                     <span>7:00 AM - 9:00 PM</span>
