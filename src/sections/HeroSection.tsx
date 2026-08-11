@@ -49,7 +49,7 @@ export default function HeroSection() {
         loop
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
-        poster="https://images.unsplash.com/photo-1571008887538-b36bb745ef8e?w=1920&h=1080&fit=crop"
+        poster="/photos/running.jpg"
       >
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
